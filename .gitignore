@@ -34,3 +34,8 @@ override.tf.json
 terraform.rc
 
 volume
+
+*__pycache__*
+
+*node_modules
+*build
