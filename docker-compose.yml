@@ -3,7 +3,7 @@ version: '3.8'
 services:
   localstack:
     container_name: localstack
-    image: localstack/localstack:3.0.2
+    image: localstack/localstack
     ports:
       - "4566:4566"
     environment:
@@ -13,7 +13,6 @@ services:
       - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
       - /var/run/docker.sock:/var/run/docker.sock
       - ./ui:/ui
-  
   terraform:
     depends_on:
       - localstack
@@ -21,4 +20,5 @@ services:
     image: hashicorp/terraform:1.5.1
     volumes:
       - ./infrastructure:/infrastructure
+      - ./app:/app
     working_dir: /infrastructure
