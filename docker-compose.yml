@@ -13,6 +13,7 @@ services:
       - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
       - /var/run/docker.sock:/var/run/docker.sock
       - ./ui:/ui
+
   terraform:
     depends_on:
       - localstack
@@ -21,4 +22,5 @@ services:
     volumes:
       - ./infrastructure:/infrastructure
       - ./app:/app
+      - ./ui:/ui
     working_dir: /infrastructure
