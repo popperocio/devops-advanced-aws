@@ -1,5 +1,7 @@
+import json
+
 def handler(event, context):
     return {
-        "status_code": 200,
-        "message": "The backend is working"
+        "statusCode": 200,
+        "body": json.dumps({"message": "The backend is working"})
     }

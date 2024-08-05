@@ -101,3 +101,21 @@ This repository is for educational and practice purposes only. Its use in produc
 ---
 ​
 Enjoy practicing your AWS skills with LocalStack! If you have any questions or issues, feel free to ask Alan Bermudez, Nicholas Spalding or Daniela Garcia.
+
+
+#### Some other considerations:
+
+When containers are created, you need to create volume folder:
+     ```
+     mkdir -p path/volume
+     ```
+
+You need to share some paths to Docker:
+   
+    Configure shared paths from Docker -> Preferences... -> Resources -> File Sharing.
+    You'll need to do this for the following folders:
+        - volume
+        - ui
+        - infrastructure
+        - app
+   
